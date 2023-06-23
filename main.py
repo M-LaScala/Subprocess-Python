@@ -58,7 +58,7 @@ for linhas in info_memoria.split('\n'):
         if linhas.startswith(numero):
             count_memorias += 1
             valores = linhas.strip().split()
-            valores_definidos = f"Memoria {count_memorias} tamanho: {valores[0]} velocidade {valores[1]}"
+            valores_definidos = f"Memoria {count_memorias} Tamanho: {valores[0]} | Velocidade: {valores[1]}"
             lista_memorias.append(valores_definidos)
 
 # Obter os nomes das redes
@@ -80,13 +80,13 @@ for nome in lista_redes:
 # Salve as informações no arquivo especificado
 with open(nome_arquivo, 'a') as arquivo:
     
-    arquivo.write(f"Informacoes retiradas: {datetime.today().strftime('%d-%m-%Y %H:%M:%S')}\n")
+    arquivo.write(f"Informacoes retiradas\nData e hora: {datetime.today().strftime('%d-%m-%Y %H:%M:%S')}\n")
     arquivo.write(f"Usuario: {proprietario}\n")
     arquivo.write(f"Modelo do processador: {processador}\n")
     cont = len(lista_armazenamento)
     arquivo.write(f"Unidades de armazenamento: {cont}\n")
     for i in range(cont):
-        arquivo.write(f"{lista_armazenamento[i]}\n")
+        arquivo.write(f"Unidade {lista_armazenamento[i]}\n")
     
     cont = len(lista_memorias)
     arquivo.write(f"Unidades de memoria: {cont}\n")
